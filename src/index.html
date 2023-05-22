@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="assets/styles/style.scss">
+</head>
+<body>
+<main>
+    <section class="gallery">
+        <div class="gallery__actualItem-wrapper">
+            <button class="gallery__button gallery__button--prev">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                    <path d="M400 976 0 576l400-400 56 57-343 343 343 343-56 57Z"/>
+                </svg>
+            </button>
+            <button class="gallery__button gallery__button--next">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                    <path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z"/>
+                </svg>
+            </button>
+            <img class="gallery__actualItem"  alt="img text">
+        </div>
+        <div class="gallery__slider">
+            <div class="gallery__images">
+            </div>
+        </div>
+    </section>
+    <div class="loader d-none">
+        <div class="loader__wrapper">
+            <div class="loader__item"></div>
+            <div class="loader__item"></div>
+            <div class="loader__item"></div>
+        </div>
+    </div>
+</main>
+<script type="module" src="assets/scripts/app.ts"></script>
+</body>
+</html>

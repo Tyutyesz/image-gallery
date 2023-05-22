@@ -1,0 +1,47 @@
+$loaderSize: 100px;
+$loaderWrapperSize: 300px;
+$animationSpeed: 1s;
+.loader{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100dvw;
+  height: 100dvh;
+  z-index:10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader__wrapper{
+  width: $loaderWrapperSize;
+  height: $loaderWrapperSize;
+  position: relative;
+}
+.loader__item{
+  width: 100px;
+  height: 100px;
+  background-color: $orange;
+  border-radius: 50px;
+  scale: 1;
+  opacity: 1;
+  position: absolute;
+  top: calc( calc($loaderWrapperSize / 2) -  calc($loaderSize / 2));
+  left: calc( calc($loaderWrapperSize / 2) -  calc($loaderSize / 2));
+  animation: loaderAnimation $animationSpeed ease-out infinite;
+  @for $i from 1 through 3 {
+    &:nth-of-type(#{$i}){
+      animation-delay: calc(.125s * #{$i});
+    }
+  }
+}
+@keyframes loaderAnimation {
+  from{
+    opacity:1;
+    scale: 0;
+  }
+  to{
+    opacity:0;
+    scale: 2;
+  }
+}
+
